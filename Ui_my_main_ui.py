@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 
+# Form implementation generated from reading ui file
 # 'C:\Users\Administrator\Desktop\car_id_detect_reg\card_soft\my_main_ui.ui'
 #
 # Created by: PyQt5 UI code generator 5.11.3
@@ -10,18 +10,21 @@
 # __author__ = xujing
 # __date__ = 2019-07-05
 
+import my_pic_rc
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QToolTip
-from PyQt5.QtGui import QFont,QIcon
+from PyQt5.QtGui import QFont, QIcon
 import sys
 import qtawesome
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(906, 600)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/pic/pic/logo.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/pic/pic/logo.ico"),
+                       QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
 
         # 将按钮边框去掉，文字设置为白色，背景灰色
@@ -94,7 +97,6 @@ class Ui_MainWindow(object):
         }
         '''
 
-
         # graph qss
         qss5 = '''
         #graphicsView{
@@ -123,7 +125,6 @@ class Ui_MainWindow(object):
             border-width:2px;  
          
             /* 边框颜色 */  
-            border-color:rgb(255,0,0);  
          
             /* 边框倒角 */  
             border-radius:10px;  
@@ -171,8 +172,8 @@ class Ui_MainWindow(object):
         '''
         MainWindow.setStyleSheet(qss2)
 
-        MainWindow.setWindowFlag(QtCore.Qt.FramelessWindowHint) # 隐藏边框
-        MainWindow.setWindowOpacity(0.95) # 设置窗口透明度
+        # MainWindow.setWindowFlag(QtCore.Qt.FramelessWindowHint) # 隐藏边框
+        MainWindow.setWindowOpacity(0.95)  # 设置窗口透明度
 
         self.centralWidget = QtWidgets.QWidget(MainWindow)
         self.centralWidget.setObjectName("centralWidget")
@@ -181,21 +182,22 @@ class Ui_MainWindow(object):
         self.label.setGeometry(QtCore.QRect(30, 50, 611, 501))
         self.label.setText("")
         self.label.setObjectName("label")
-        self.pushButton = QtWidgets.QPushButton(self.centralWidget)
-        self.pushButton.setGeometry(QtCore.QRect(720, 20, 75, 23))
-        self.pushButton.setObjectName("pushButton")
-        QToolTip.setFont(QFont("SansSerif",6))
-        self.pushButton.setToolTip("<b>最小化</b>")
-        self.pushButton.setStyleSheet('''QPushButton{background:#F76677;border-radius:5px;}QPushButton:hover{background:red;}''')
-        self.pushButton_2 = QtWidgets.QPushButton(self.centralWidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(810, 20, 75, 23))
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_2.setToolTip("<b>关闭</b>")
-        self.pushButton_2.setStyleSheet('''QPushButton{background:#6DDF6D;border-radius:5px;}QPushButton:hover{background:green;}''')
+        # self.pushButton = QtWidgets.QPushButton(self.centralWidget)
+        # self.pushButton.setGeometry(QtCore.QRect(720, 20, 75, 23))
+        # self.pushButton.setObjectName("pushButton")
+        # QToolTip.setFont(QFont("SansSerif",6))
+        # self.pushButton.setToolTip("<b>最小化</b>")
+        # self.pushButton.setStyleSheet('''QPushButton{background:#F76677;border-radius:5px;}QPushButton:hover{background:red;}''')
+        # self.pushButton_2 = QtWidgets.QPushButton(self.centralWidget)
+        # self.pushButton_2.setGeometry(QtCore.QRect(810, 20, 75, 23))
+        # self.pushButton_2.setObjectName("pushButton_2")
+        # self.pushButton_2.setToolTip("<b>关闭</b>")
+        # self.pushButton_2.setStyleSheet('''QPushButton{background:#6DDF6D;border-radius:5px;}QPushButton:hover{background:green;}''')
         self.pushButton_3 = QtWidgets.QPushButton(self.centralWidget)
         self.pushButton_3.setGeometry(QtCore.QRect(690, 90, 191, 23))
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/pic/pic/cut.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(":/pic/pic/cut.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_3.setIcon(icon1)
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_3.setStyleSheet(qss1)
@@ -206,7 +208,8 @@ class Ui_MainWindow(object):
         self.pushButton_4 = QtWidgets.QPushButton(self.centralWidget)
         self.pushButton_4.setGeometry(QtCore.QRect(690, 230, 191, 23))
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/pic/pic/shibie.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap(":/pic/pic/shibie.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_4.setIcon(icon2)
         self.pushButton_4.setObjectName("pushButton_4")
         self.pushButton_4.setStyleSheet(qss1)
@@ -214,11 +217,13 @@ class Ui_MainWindow(object):
         self.label_3.setGeometry(QtCore.QRect(700, 290, 171, 41))
         self.label_3.setText("")
         self.label_3.setObjectName("label_3")
-        self.label_3.setStyleSheet("color: rgb(255, 255, 255);font-size: 24px;font-weight:1000;")
+        self.label_3.setStyleSheet(
+            "color: rgb(255, 255, 255);font-size: 24px;font-weight:1000;")
         self.pushButton_5 = QtWidgets.QPushButton(self.centralWidget)
         self.pushButton_5.setGeometry(QtCore.QRect(700, 360, 181, 23))
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap(":/pic/pic/color.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap(":/pic/pic/color.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_5.setIcon(icon3)
         self.pushButton_5.setObjectName("pushButton_5")
         self.pushButton_5.setStyleSheet(qss1)
@@ -230,14 +235,16 @@ class Ui_MainWindow(object):
         self.pushButton_6 = QtWidgets.QPushButton(self.centralWidget)
         self.pushButton_6.setGeometry(QtCore.QRect(710, 492, 75, 41))
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap(":/pic/pic/image.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap(":/pic/pic/image.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_6.setIcon(icon4)
         self.pushButton_6.setObjectName("pushButton_6")
         self.pushButton_6.setStyleSheet(qss6)
         self.pushButton_7 = QtWidgets.QPushButton(self.centralWidget)
         self.pushButton_7.setGeometry(QtCore.QRect(810, 490, 71, 41))
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap(":/pic/pic/video.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon5.addPixmap(QtGui.QPixmap(":/pic/pic/video.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_7.setIcon(icon5)
         self.pushButton_7.setObjectName("pushButton_7")
         self.pushButton_7.setStyleSheet(qss6)
@@ -257,8 +264,8 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "交通门禁车牌检测和识别系统"))
-        self.pushButton.setText(_translate("MainWindow", "-"))
-        self.pushButton_2.setText(_translate("MainWindow", "✘"))
+        # self.pushButton.setText(_translate("MainWindow", "-"))
+        # self.pushButton_2.setText(_translate("MainWindow", "✘"))
         self.pushButton_3.setText(_translate("MainWindow", "车牌检测"))
         self.pushButton_4.setText(_translate("MainWindow", "车牌识别"))
         self.pushButton_5.setText(_translate("MainWindow", "车牌颜色"))
@@ -266,7 +273,6 @@ class Ui_MainWindow(object):
         self.pushButton_7.setText(_translate("MainWindow", "视频"))
         self.pushButton_8.setText(_translate("MainWindow", "交通门禁车牌检测和识别系统"))
 
-import my_pic_rc
 
 if __name__ == "__main__":
     import sys
@@ -276,4 +282,3 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-
