@@ -22,7 +22,7 @@ from svm_train import *
 from card_seg import *
 import time
 
-
+DEFAULT_PATH = "./test_img/wAUB816.jpg"
 class MainWindow(QMainWindow, Ui_MainWindow):
     """
     槽函数
@@ -55,15 +55,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         sys.exit(0)
 
     @pyqtSlot()
-    def on_pushButton_6_clicked(self):
+    def on_pushButton_6_clicked(self,path):
         """
         加载图像
         """
         print("加载图像")
         try:
-            self.file_dir_temp, _ = QFileDialog.getOpenFileName(
-                self, "选择被检测的车辆")
-            self.file_dir = self.file_dir_temp.replace("\\", "/")
+            print(path)
+            if path != "":
+                self.file_dir = path
+            else:
+                self.file_dir_temp, _ = QFileDialog.getOpenFileName(self, "选择被检测的车辆")
+                self.file_dir = self.file_dir_temp.replace("\\", "/")
             if self.file_dir == '':
                 print('未选择图片')
                 return
@@ -128,14 +131,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
-
-    # splash = QSplashScreen(QtGui.QPixmap(':/pic/pic/face.png'))
-
-    # splash.show()
-    # splash.showMessage('渲染界面...')
-    # splash.showMessage('正在初始化程序...')
     app.processEvents()
     ui = MainWindow()
+    ui.on_pushButton_6_clicked(DEFAULT_PATH) # 默认图像
     ui.show()
     # splash.finish(ui)
 

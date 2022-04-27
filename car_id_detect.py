@@ -304,7 +304,7 @@ def CaridDetect(car_pic):
         card_color = color
         labels = (int(right_point[1]), int(heigth_point[1]), int(
             left_point[0]), int(right_point[0]))
-    if color == "no":
+    if card_color == "no":
         raise Exception('无法确认车牌颜色\n可能是因为未识别到正确的车牌区域')
     else:
         print('the color is', card_color)
