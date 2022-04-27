@@ -61,7 +61,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         print("加载图像")
         try:
-            print(path)
             if path != "":
                 self.file_dir = path
             else:
