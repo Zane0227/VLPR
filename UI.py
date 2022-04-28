@@ -1,29 +1,21 @@
-import my_pic_rc
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtGui import QImage, QPixmap,QCursor
-from PyQt5.QtCore import *
 import sys
-import qtawesome
+
 import cv2
+import qtawesome
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtCore import *
+from PyQt5.QtGui import QCursor, QImage, QPixmap
+
+import my_pic_rc
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(906, 600)
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/pic/pic/logo.ico"),
-                       QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        MainWindow.setWindowIcon(icon)
-
         qss1 = '''
         QPushButton{border:none;color:#1F2F3D;font-size:22px;font-weight:700;}
-       
         '''
-
         # 圆角窗口
         qss2 = '''#MainWindow{background:white;border-radius:30px}
-
         '''
         # 下拉列表样式
         qss3 = '''QComboBox{
@@ -63,8 +55,9 @@ class Ui_MainWindow(object):
         }
 
         '''
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(906, 600)
         MainWindow.setStyleSheet(qss2)
-
         MainWindow.setFixedSize(
             MainWindow.width(), MainWindow.height())  # 不可调整宽高
         # 左侧图像
@@ -74,7 +67,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(self.centralWidget)
         self.label.setGeometry(QtCore.QRect(30, 50, 611, 501))
         self.label.setText("")
-        self.label.setAlignment(QtCore.Qt.AlignCenter|QtCore.Qt.AlignVCenter)
+        self.label.setAlignment(QtCore.Qt.AlignCenter | QtCore.Qt.AlignVCenter)
         self.label.setObjectName("label")
 
         # 车牌图像
@@ -94,8 +87,10 @@ class Ui_MainWindow(object):
         self.pushButton_4.setStyleSheet(qss1)
         self.label_3 = QtWidgets.QLabel(self.centralWidget)
         self.label_3.setGeometry(QtCore.QRect(705, 280, 171, 41))
-        self.label_3.setAlignment(QtCore.Qt.AlignCenter|QtCore.Qt.AlignVCenter)
-        self.label_3.setStyleSheet("color: black;font-size: 24px;font-weight:1000;border-radius:10px;background-color: #f5f5f5")
+        self.label_3.setAlignment(
+            QtCore.Qt.AlignCenter | QtCore.Qt.AlignVCenter)
+        self.label_3.setStyleSheet(
+            "color: black;font-size: 24px;font-weight:1000;border-radius:10px;background-color: #f5f5f5")
 
         # 车牌颜色
         self.pushButton_5 = QtWidgets.QPushButton(self.centralWidget)
@@ -135,7 +130,6 @@ class Ui_MainWindow(object):
 
 
 if __name__ == "__main__":
-    import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()

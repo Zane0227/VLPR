@@ -14,7 +14,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import QMainWindow
 
-from Ui_my_main_ui import Ui_MainWindow
+from UI import Ui_MainWindow
 import sys
 import cv2
 from car_id_detect import *
@@ -29,33 +29,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     """
 
     def __init__(self, parent=None):
-        """
-        Constructor
-
-        @param parent reference to the parent widget
-        @type QWidget
-        """
         super(MainWindow, self).__init__(parent)
         self.setupUi(self)
 
     @pyqtSlot()
-    def on_pushButton_clicked(self):
-        """
-        最小化
-        """
-        print('最小化')
-        QMainWindow.showMinimized(self)
-
-    @pyqtSlot()
-    def on_pushButton_2_clicked(self):
-        """
-        退出
-        """
-        print("退出")
-        sys.exit(0)
-
-    @pyqtSlot()
-    def on_pushButton_6_clicked(self,path):
+    def on_pushButton_6_clicked(self,path = ''):
         """
         加载图像
         """
@@ -134,6 +112,4 @@ if __name__ == "__main__":
     ui = MainWindow()
     ui.on_pushButton_6_clicked(DEFAULT_PATH) # 默认图像
     ui.show()
-    # splash.finish(ui)
-
     sys.exit(app.exec_())

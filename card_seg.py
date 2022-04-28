@@ -1,10 +1,11 @@
 
+import json
+import os
+import sys
+
 import cv2
 import numpy as np
 from numpy.linalg import norm
-import sys
-import os
-import json
 
 from car_id_detect import *
 from svm_train import *
